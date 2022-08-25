@@ -36,6 +36,6 @@ void init_interpolate(py::module &m) {
     py::class_<interpolate::multilinear_adaptive_cpu_interpolator, std::shared_ptr<interpolate::multilinear_adaptive_cpu_interpolator>>(m, "multilinear_adaptive_cpu_interpolator")
     .def(py::init<interpolate::operator_set_evaluator *>(), py::arg("supporting_point_evaluator_input"))
     .def("point_data_t",
-         py::overload_cast<double>( &interpolate::multilinear_adaptive_cpu_interpolator::point_data_t),
+         &interpolate::multilinear_adaptive_cpu_interpolator::point_data_t,
          py::arg("value"));//, py::call_guard<py::gil_scoped_release>());
 }
