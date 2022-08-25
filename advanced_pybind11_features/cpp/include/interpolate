@@ -1,0 +1,6 @@
+#ifndef INTERPOLATE_LIBRARY_H
+#define INTERPOLATE_LIBRARY_H
+
+#include "interpolate_bits/interpolate.hpp"
+
+#endif

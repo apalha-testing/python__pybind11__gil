@@ -1,0 +1,15 @@
+import interpolate
+
+class fancy_evaluator(interpolate.operator_set_evaluator):
+
+    def __init__(self):
+        super().__init__()
+
+    def evaluate(self, double):
+        return 2.0*double
+
+my_evaluator = fancy_evaluator()
+
+my_interpolator = interpolate.multilinear_adaptive_cpu_interpolator(my_evaluator)
+
+my_interpolator.point_data_t(2.0)

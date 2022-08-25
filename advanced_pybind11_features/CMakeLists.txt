@@ -11,31 +11,31 @@ endif()
 set(CMAKE_CXX_FLAGS "-O3")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
-project(automobile)
+project(interpolate)
 
 find_package(OpenMP)
 
-include_directories("${CMAKE_SOURCE_DIR}/cpp/include/automobile_bits")
+include_directories("${CMAKE_SOURCE_DIR}/cpp/include/interpolate_bits")
 include_directories("${CMAKE_SOURCE_DIR}/python")
 
 file (GLOB SOURCE_FILES "cpp/src/*.cpp")
-file (GLOB HEADER_FILES "cpp/include/automobile_bits/*.hpp")
+file (GLOB HEADER_FILES "cpp/include/interpolate_bits/*.hpp")
 file (GLOB PYTHON_FILES "python/*.cpp" "python/*.hpp")
 
 # Set up such that XCode organizes the files
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE_FILES} ${HEADER_FILES} ${PYTHON_FILES} )
 
 find_package(pybind11 REQUIRED)
-pybind11_add_module(automobile
+pybind11_add_module(interpolate
 	${SOURCE_FILES}
 	${HEADER_FILES}
 	${PYTHON_FILES}
 )
 
-#target_link_libraries(automobile PUBLIC)
-target_link_libraries(automobile PUBLIC OpenMP::OpenMP_CXX)
+#target_link_libraries(interpolate PUBLIC)
+target_link_libraries(interpolate PUBLIC OpenMP::OpenMP_CXX)
 
-install(TARGETS automobile
+install(TARGETS interpolate
   COMPONENT python
   LIBRARY DESTINATION "${PYTHON_LIBRARY_DIR}"
   )
