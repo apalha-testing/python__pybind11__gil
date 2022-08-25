@@ -18,7 +18,7 @@ public:
 
     virtual ~operator_set_evaluator() {};
 
-    virtual double evaluate(double value) const = 0;
+    virtual double evaluate(double value) = 0;
 };
 
 

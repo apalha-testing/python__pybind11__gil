@@ -36,4 +36,4 @@ printf "\n\n-----------------------------------------------------\n"
 printf "Running example...\n"
 printf "-----------------------------------------------------\n"
 cp ../tests/interpolator.py ./
-python interpolator.py
+#python interpolator.py
