@@ -4,7 +4,7 @@
 #include <unistd.h>
 #include <iostream>
 
-#define THREAD_NUM 4
+#define THREAD_NUM 1
 
 #ifndef INTERPOLATE_H
 #define INTERPOLATE_H
