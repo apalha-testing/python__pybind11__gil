@@ -12,4 +12,4 @@ my_evaluator = fancy_evaluator()
 
 my_interpolator = interpolate.multilinear_adaptive_cpu_interpolator(my_evaluator)
 
-my_interpolator.point_data_t(2.0)
+my_interpolator.get_point_data(2.0)

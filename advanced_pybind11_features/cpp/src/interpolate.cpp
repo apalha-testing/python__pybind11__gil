@@ -8,7 +8,7 @@ namespace interpolate {
     this->supporting_point_evaluator = supporting_point_evaluator_input;
   };
 
-  double multilinear_adaptive_cpu_interpolator::point_data_t(double value){
+  double multilinear_adaptive_cpu_interpolator::get_point_data(double value){
     omp_set_num_threads(THREAD_NUM);
     #pragma omp parallel
     {
