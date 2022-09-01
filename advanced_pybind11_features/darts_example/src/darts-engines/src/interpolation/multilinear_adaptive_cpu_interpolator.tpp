@@ -95,7 +95,7 @@ multilinear_adaptive_cpu_interpolator<index_t, value_t, N_DIMS, N_OPS>::get_poin
     std::cout << "\nSTART SIMULATION 06_02_05_08_04_true_06_get_point_data\n-------------------------------------------------------------------------------------------------------------\n" << std::flush;
     this->n_points_used++;
     std::cout << "\nSTART SIMULATION 06_02_05_08_04_true_07_get_point_data\n-------------------------------------------------------------------------------------------------------------\n" << std::flush;
-    \\this->timer->node["body generation"].node["point generation"].stop(); \\ commented because we dont create a timer
+    //this->timer->node["body generation"].node["point generation"].stop(); \\ commented because we dont create a timer
     std::cout << "\nSTART SIMULATION 06_02_05_08_04_true_08_get_point_data\n-------------------------------------------------------------------------------------------------------------\n" << std::flush;
     return point_data[point_index];
   }
