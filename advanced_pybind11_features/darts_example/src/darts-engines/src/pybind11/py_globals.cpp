@@ -61,7 +61,7 @@ void redirect_darts_output(std::string file_name) {
 void print_build_info()
 {
   // std::cout << "darts-linear-solvers built on " << LINSOLV_BUILD_DATE << " by " << LINSOLV_BUILD_MACHINE << " from " << LINSOLV_BUILD_GIT_HASH << std::endl;
-  std::cout << "darts-engines built on " << ENGINES_BUILD_DATE << " by " << ENGINES_BUILD_MACHINE << " from " << ENGINES_BUILD_GIT_HASH << std::endl;
+  std::cout << "darts-engines built on " << ENGINES_BUILD_DATE << " by " << ENGINES_BUILD_MACHINE << std::endl; // << " from " << ENGINES_BUILD_GIT_HASH << std::endl;
 }
 
 void pybind_globals(py::module &m)

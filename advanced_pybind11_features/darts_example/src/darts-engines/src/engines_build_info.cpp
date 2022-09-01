@@ -1,4 +1,3 @@
 #include "engines_build_info.h"
-const char *ENGINES_BUILD_DATE = "30/08/2022, 16:37:47";
-const char *ENGINES_BUILD_MACHINE = "apalha@Thessaloniki.local";
-const char *ENGINES_BUILD_GIT_HASH = "";
+const char *ENGINES_BUILD_DATE = "01/09/2022, 11:02:06";
+const char *ENGINES_BUILD_MACHINE = "apalha@c-001-028-040.client.tudelft.eduvpn.nl";

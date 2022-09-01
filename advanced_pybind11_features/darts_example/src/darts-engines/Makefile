@@ -1,8 +1,10 @@
 include conf_gcc.mk
 
+PYTHON_INCLUDES_RAW = $(shell python3 -m pybind11 --includes)
+PYTHON_INCLUDES =  $(patsubst %pybind11/include, %pybind11/include/pybind11, $(PYTHON_INCLUDES_RAW))  # corrects pybind11 include dir from pybind11/include to pybind11/include/pybind11
 TARGET      = ../../tests/engines.so
 IFLAGS      = -I./src -I./src/interpolation -I./src/pybind11
-IFLAGS      += -I./lib/pybind11 $(shell python3-config --includes)
+IFLAGS      += $(PYTHON_INCLUDES) #-I./lib/pybind11 $(shell python3-config --includes)
 
 # solvers library, linked to engines, is build inside manylinux2010, where D_GLIBCXX_USE_CXX11_ABI is locked to 0
 # Force the same value here for correct linking when engines are built elsewhere, and solvers are taken from manylinux2010
@@ -58,7 +60,7 @@ OBJ_ITORS += $(filter $(BUILD_DIR)/interpolation%, $(OBJ_D) $(OBJ_GPU_D) $(OBJ_M
 
 BUILD_MACHINE := $(shell whoami)@$(shell hostname)
 BUILD_DATE := $(shell TZ=Europe/Amsterdam date +"%d/%m/%Y, %H:%M:%S")
-BUILD_GIT_HASH := $(shell git describe --always --dirty --match 'NOT A TAG')
+#BUILD_GIT_HASH := $(shell git describe --always --dirty --match 'NOT A TAG')
 
 dir_guard=@mkdir -p $(@D)
 
@@ -73,7 +75,7 @@ src/engines_build_info.cpp: build_info
     $(shell echo "#include \"engines_build_info.h\""  > src/engines_build_info.cpp)
     $(shell echo "const char *ENGINES_BUILD_DATE = \"$(BUILD_DATE)\";"  >> src/engines_build_info.cpp)
     $(shell echo "const char *ENGINES_BUILD_MACHINE = \"$(BUILD_MACHINE)\";"  >> src/engines_build_info.cpp)
-    $(shell echo "const char *ENGINES_BUILD_GIT_HASH = \"$(BUILD_GIT_HASH)\";"  >> src/engines_build_info.cpp)
+    #$(shell echo "const char *ENGINES_BUILD_GIT_HASH = \"$(BUILD_GIT_HASH)\";"  >> src/engines_build_info.cpp)
 
 .PHONY: gpu mt debug gpu_debug mt_debug clean clean_target build_dirs clean_itors
 
