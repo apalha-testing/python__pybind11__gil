@@ -36,11 +36,11 @@
 namespace py = pybind11;
 
 
-#if defined(__linux__) || defined(__APPLE__)
-  // declaration of stream test main function
-  // used to check the system bandwidth
-  int stream_main();
-#endif // __linux__ || __APPLE__
+//#if defined(__linux__) || defined(__APPLE__)
+//  // declaration of stream test main function
+//  // used to check the system bandwidth
+//  int stream_main();
+//#endif // __linux__ || __APPLE__
 
 
 
@@ -148,9 +148,9 @@ void pybind_globals(py::module &m)
 
   m.def("print_build_info", &print_build_info, "Print build information: date, user, machine, git hash");
 
-#if defined(__linux__) || defined(__APPPLE__)
-  m.def("stream", &stream_main, "Launch stream bandwidth test");
-#endif // __linux__ || __APPLE__
+//#if defined(__linux__) || defined(__APPPLE__)
+  //m.def("stream", &stream_main, "Launch stream bandwidth test");
+//#endif // __linux__ || __APPLE__
 
 
 

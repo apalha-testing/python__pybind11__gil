@@ -112,7 +112,7 @@ $(TARGET): build_dirs $(OBJ_D) $(LIN_LIB)
 	$(CXX) -shared -o $(TARGET) $(OBJ_D) $(LFLAGS)
 
 mt: build_dirs $(OBJ_MT_D) $(LIN_LIB)
-	$(CXX) -undefined dynamic_lookup -shared -o $(TARGET) $(OBJ_MT_D) $(LFLAGS_MT) $(OMP_FLAG)
+	$(CXX) $(PYBIND11_FLAGS) -shared -o $(TARGET) $(OBJ_MT_D) $(LFLAGS_MT) $(OMP_FLAG)
 
 debug: build_dirs $(OBJ_DEBUG_D) $(LIN_LIB)
 	$(CXX) -shared -o $(TARGET) $(OBJ_DEBUG_D) $(LFLAGS)

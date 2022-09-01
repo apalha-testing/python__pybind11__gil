@@ -10,3 +10,5 @@ ARCHFLAGS   	= cr
 RANLIB      	= /usr/bin/ranlib
 
 OMP_FLAG    	= -fopenmp
+
+PYBIND11_FLAGS = 
