@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Define your environment
-PYTHON_LIBRARY_DIR="/opt/homebrew/Caskroom/miniforge/base/envs/pybind/lib/python3.8"
-PYTHON_EXECUTABLE="/opt/homebrew/Caskroom/miniforge/base/envs/pybind/bin/python"
+PYTHON_LIBRARY_DIR="/opt/homebrew/Caskroom/miniforge/base/envs/onset_darts/lib/python3.8"
+PYTHON_EXECUTABLE="/opt/homebrew/Caskroom/miniforge/base/envs/onset_darts/bin/python"
 
 # Set the compilers to gcc instead of clang
 printf "\n-----------------------------------------------------\n"
