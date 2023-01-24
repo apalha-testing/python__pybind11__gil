@@ -11,7 +11,18 @@ PYBIND11_MAKE_OPAQUE(std::vector<value_t>);
 //Definition of pybind module
 PYBIND11_MODULE(vector_error, m) {
     // Optional docstring
-    m.doc() = "Vector error example";
+    m.doc() = R"pbdoc(
+        Pybind11 example of docs
+        ------------------------
+
+        Vector error example.
+        .. note ::
+           You can use sphinx format for docstrings (python) here.
+
+        .. warning ::
+           This is a warning.
+
+    )pbdoc";
 
     // vector exposure
     py::bind_vector<std::vector<value_t>>(m, "value_vector", py::module_local(true), py::buffer_protocol())
@@ -35,8 +46,21 @@ PYBIND11_MODULE(vector_error, m) {
       }));
 
     //Class conn_mesh exposure
-    py::class_<conn_mesh>(m, "conn_mesh", "Class")
+    py::class_<conn_mesh>(m, "conn_mesh", R"pbdoc(
+        This is the documentation of the class.
+
+       )pbdoc"
+      )
       .def(py::init<>()) //constructor
-      .def("init", &conn_mesh::init, "init method") //method
+      .def("init", &conn_mesh::init, R"pbdoc(
+        This is the init function from C++ conn_mesh::init.
+
+        Some other explanation about the init function.
+
+        :param None: If there were params they would render like this.
+
+        :return: Nothing, but if it would it will render like this.
+
+        )pbdoc") //method
       .def_readwrite("composition", &conn_mesh::composition); //attribute
 }
