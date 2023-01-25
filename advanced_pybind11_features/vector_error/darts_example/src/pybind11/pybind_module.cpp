@@ -16,6 +16,7 @@ PYBIND11_MODULE(vector_error, m) {
         ------------------------
 
         Vector error example.
+
         .. note ::
            You can use sphinx format for docstrings (python) here.
 

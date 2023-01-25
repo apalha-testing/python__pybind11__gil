@@ -37,7 +37,11 @@ To run the python example, copy the python file into the build directory: `cp py
 
 ## Automated setup
 
-Alternatively to Setup with CMake, run the script `full_build_and_test.sh` to build and run the python example file. Check that the specified versions of `gcc` and `g++` match your environment.
+Alternatively to Setup with CMake, run the script `full_build_and_test.sh` to build and run the python example file, and to generate documentation. Check that the specified versions of `gcc` and `g++` match your environment.
+
+## About documentation
+
+Information about docs implementation is in [docs/README.md](docs/README.md).
 
 ## Ask for help
 
