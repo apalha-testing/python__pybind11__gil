@@ -11,6 +11,11 @@ conda install -c conda-forge pybind11
 ```
 If you want to change the version of this header-only library you can simply replace the folder `pybind11` in the include path (obtain it via: `python -c "import pybind11; print(pybind11.get_include())"`). 
 
+For the docuementation you will need to install sphinx requirements:
+```
+pip install -r docs/requirements_docs.txt
+``` 
+
 ## Setup with CMake
 
 We will start with the `CMake` based setup from a [previous introduction found here](https://github.com/smrfeld/cmake_cpp_pybind11_tutorial).
