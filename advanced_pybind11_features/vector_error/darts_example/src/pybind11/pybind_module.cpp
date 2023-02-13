@@ -5,6 +5,9 @@
 
 namespace py = pybind11;
 
+// necessary for _a suffix to work as indicator of arguments
+using namespace pybind11::literals;
+
 //from py_globals.h in darts-engines
 PYBIND11_MAKE_OPAQUE(std::vector<value_t>);
 
@@ -63,5 +66,15 @@ PYBIND11_MODULE(vector_error, m) {
         :return: Nothing, but if it would it will render like this.
 
         )pbdoc") //method
+      .def("get_sum", &conn_mesh::get_sum, R"pbdoc(
+        This is a function that does the sum of two numbers.
+        :param a: 1st number to sum.
+        :param b: 2nd number to sum.
+        )pbdoc", "a"_a, "b"_a=10)
+      .def("get_sum", &conn_mesh::get_diff, R"pbdoc(
+        This is a function that calculated the difference of two numbers.
+        :param a: 1st number to calculate the difference.
+        :param b: 2nd number to sum.
+        )pbdoc", py::arg("a"), py::arg("b")=10)
       .def_readwrite("composition", &conn_mesh::composition); //attribute
 }

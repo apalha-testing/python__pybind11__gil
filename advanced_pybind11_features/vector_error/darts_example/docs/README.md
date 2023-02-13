@@ -30,11 +30,12 @@ Use syntax of [sphinx (rst)](https://sublime-and-sphinx-guide.readthedocs.io/en/
 
 In [`src/pybind11/pybind_module.cpp`](../src/pybind11/pybind_module.cpp) we can add docstrings to:
 
-* **Module:** Line 14. 
-* **Class:** Line 50.
-* **Method or function:** Line 56.
+* **Module:** Line 17. 
+* **Class:** Line 53.
+* **Method or function:** Line 59.
 
 Keep your docstring in between `R"pbdoc(` and `)pbdoc"`, otherwise you'll get compilation errors.
+In other functions such as `get_sum` and `get_diff` you can see how to name your arguments in two different ways. Other wise it will name then arg0, arg1 ...
 
 #### In python
 
